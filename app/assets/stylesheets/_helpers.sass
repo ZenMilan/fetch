@@ -1,0 +1,153 @@
+=group
+  &:before, &:after
+    content: " "
+    display: table
+
+  &:after
+    clear: both
+
+=border-box
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+=placeholder
+  &::-webkit-input-placeholder
+    @content
+
+  &:-moz-placeholder
+    @content
+
+  &::-moz-placeholder
+    @content
+
+  &:-ms-input-placeholder
+    @content
+
+=no-select
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+
+=antialiased
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+  font-smooth: antialiased
+
+=button
+  background: none
+  color: #9ea7b1
+  border: 2px solid #CBD0D5
+  outline: none
+  padding: 10px
+  +border-radius(5px)
+  font-size: 0.7em
+  font-weight: 600
+  +sans-serif
+  +no-select
+  +antialiased
+  text-decoration: none
+  text-align: center
+
+=transform($args)
+  -webkit-transform: $args
+  -moz-transform: $args
+  -ms-transform: $args
+  -o-transform: $args
+  transform: $args
+
+=transition($args)
+  -o-transition: $args
+  -webkit-transition: $args
+  -moz-transition: $args
+  transition: $args
+
+=box-shadow($args...)
+  -moz-box-shadow: $args
+  -webkit-box-shadow: $args
+  box-shadow: $args
+
+=project_form_styles
+  +serif
+  outline: none
+  border: none
+  border-bottom: 1px dotted #ccc
+  background: none
+  +placeholder
+    +serif
+    font-style: italic
+    font-size: 1em
+
+=badge
+  +antialiased
+  float: left
+  border: 1px solid #ccc
+  padding: 5px
+  text-align: center
+  +border-radius(4px)
+  margin: 0 0 0 1em
+  font-size: 0.5em
+  text-transform: uppercase
+  +sans-serif
+  font-weight: 600
+
+=style-form
+  width: 100%
+  +border-box
+  padding: 0.5em
+  outline: none
+  border: none
+  font-size: 0.85em
+  line-height: 1.5
+  +serif
+  +antialiased
+
+  &:focus
+    border-color: $header-bg
+
+=traditional-form
+  +style-form
+  border: 1px solid $feature-border
+  +border-radius(4px)
+
+  +placeholder
+    +serif
+    font-style: italic
+    font-size: 1em
+
+=gradient($start, $stop)
+  background: $start
+  background: -moz-linear-gradient(top,  $start 0%, $stop 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%,$stop))
+  background: -webkit-linear-gradient(top,  $start 0%,$stop 100%)
+  background: -o-linear-gradient(top,  $start 0%,$stop 100%)
+  background: -ms-linear-gradient(top,  $start 0%,$stop 100%)
+  background: linear-gradient(to bottom,  $start 0%,$stop 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$stop',GradientType=0 )
+
+=title
+  +sans-serif
+  font-weight: 600
+  font-size: 1.35em
+
+=narrative
+  font-size: 0.95em
+  line-height: 1.4
+  color: #585858
+  p
+    margin: 0
+
+=meta
+  color: #B4B4B4
+  font-size: 0.75em
+  &:not(:last-child)
+    &:after
+      content: ' \2022 '
