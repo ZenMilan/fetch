@@ -1,7 +1,7 @@
 header
   +group
   padding: 1em
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid #eee
 
   h1
     float: left
@@ -22,3 +22,54 @@ header
 
         &.separator
           margin: 0 0.25em
+
+.FetchFeedContainer
+  +group
+  padding: 1em
+
+.PostLink
+  float: left
+  width: 30%
+  +border-box
+
+  h1
+    text-transform: uppercase
+    font-size: 1.5em
+
+.FetchFeed
+  float: right
+  width: 70%
+  +border-box
+  padding: 0 2em
+  border-left: 1px solid #eee
+
+  h1
+    text-transform: uppercase
+    font-size: 1.5em
+
+  ul.posts
+    margin: 0
+    padding: 0
+
+    li.post
+      list-style: none
+      padding: 1.5em 0
+      border-bottom: 1px solid #eee
+
+      &:last-child
+        border: none
+
+  ul.actions
+    +group
+    padding: 0
+    margin: 1em 0 0
+
+    li
+      float: left
+      font-size: 0.85em
+      list-style: none
+
+      &.separator
+        margin: 0 0.45em
+
+

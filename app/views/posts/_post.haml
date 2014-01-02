@@ -1,0 +1,11 @@
+%li.post
+  .title= link_to post.title, post.url
+  .summary= post.summary
+  .timestamp posted by #{User.find(post.user_id).email} #{time_ago_in_words(post.created_at)} ago
+
+  %ul.actions
+    %li.action= link_to "star this", "#"
+    %li.action.separator!= "|"
+    %li.action= link_to "share this", "#"
+    %li.action.separator!= "|"
+    %li.action= link_to "read later", "#"

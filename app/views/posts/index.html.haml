@@ -1,12 +1,10 @@
-.PostLink
-  = render 'form'
+.FetchFeedContainer
 
-.FetchFeed
+  .PostLink
+    %h1 Add Link
+    = render 'form'
 
-%h1 Your Feed
-%ul
-  - @posts.each do |post|
-    %li
-      .title= link_to post.title, post.url
-      .summary= post.summary
-      .timestamp posted by #{User.find(post.user_id).email} #{time_ago_in_words(post.created_at)} ago
+  .FetchFeed
+    %h1 Your Feed
+    #posts
+      %ul.posts= render @posts
